@@ -25,4 +25,5 @@ def SPT(_list=[], n = 10, m = 3, verbose=False):
                 print("Initial array:\n{}".format(_list))
                 print("SPT-output:")
                 for i in range(len(matrix)):
-                        print("{}: {}".format(i, matrix[i]))
+                        print("{}: {}".format(i+1, matrix[i]))
+        return matrix
