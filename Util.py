@@ -1,9 +1,5 @@
-'''
-Helper function to decide whether swap is needed
-
-Tries to swap matrix elements and recalculates target function.
-'''
-def swap_calculate(_matrix, row1, column1, row2, column2):
+#legacy
+def _swap_calculate(_matrix, row1, column1, row2, column2):
 	matrix = []
 	for i in range(len(_matrix)):
 		matrix.append(_matrix[i].copy())
@@ -18,6 +14,11 @@ def swap_calculate(_matrix, row1, column1, row2, column2):
 
 	return abs(C1-C2) - abs(C1_new-C2_new)
 
+'''
+Helper function to decide whether swap is needed
+
+Tries to swap matrix elements and recalculates target function.
+'''
 def radial_swap_calculate(_matrix, row1, column1, row2, column2):
 	matrix = []
 	for i in range(len(_matrix)):

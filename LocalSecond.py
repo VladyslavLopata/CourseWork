@@ -5,7 +5,7 @@ def local_second(_list=[], n = 10, m = 3, verbose=False):
 
 	#Calculating initial SPT
 	
-	matrix = SPT.SPT(_list, n, m, verbose)
+	matrix = SPT.SPT(_list, n, m, False)
 
 	_length = len(matrix[-1])
 
@@ -15,7 +15,7 @@ def local_second(_list=[], n = 10, m = 3, verbose=False):
 
 	#CMD output on demand
 	if verbose:
-		print("Optimised output:")
+		print("Optimised via local 2:")
 		for i in range(m):
 			print("{}: {}".format(i+1, matrix[i]))
 
@@ -35,6 +35,3 @@ def try_all_in_radius(matrix, row, m):
 			if estimation[1][1] < minimal_estimated[0]:
 				minimal_estimated = estimation[1][1], estimation[0]
 	u.matrix_swap(matrix, minimal_estimated[1][0], minimal_estimated[1][1], minimal_estimated[1][2], minimal_estimated[1][3])
-
-
-local_second(n = 15, verbose = True)

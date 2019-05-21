@@ -7,7 +7,7 @@ def local_first(_list=[], n = 10, m = 3, verbose=False):
 
 	#Calculating initial SPT
 	import SPT
-	matrix = SPT.SPT(_list, n, m, verbose)
+	matrix = SPT.SPT(_list, n, m, False)
 
 	#Reversing each row of matrix
 	for i in range(m):
@@ -23,7 +23,7 @@ def local_first(_list=[], n = 10, m = 3, verbose=False):
 		end_iterator = m-1
 
 		while start_iterator < end_iterator:
-			if u.swap_calculate(matrix, start_iterator, i, end_iterator, i):
+			if u.radial_swap_calculate(matrix, start_iterator, i, end_iterator, i)[1] < 0:
 				u.matrix_swap(matrix, start_iterator, i, end_iterator, i)
 			start_iterator += 1
 			end_iterator -= 1
@@ -34,7 +34,7 @@ def local_first(_list=[], n = 10, m = 3, verbose=False):
 
 	#CMD output on demand
 	if verbose:
-		print("Optimised output:")
+		print("Optimised via local 1:")
 		for i in range(m):
 			print("{}: {}".format(i+1, matrix[i]))
 
