@@ -1,4 +1,4 @@
-def SPT(_list=[], n = 10, m = 3, verbose=False):
+def SPT(_list=[], n = 10, m = 3):
 
 	#--------------------------------list sort---------------------------------#
 	_list.sort()
@@ -13,10 +13,4 @@ def SPT(_list=[], n = 10, m = 3, verbose=False):
 		matrix[j].append(_list[i])
 		j = (j+1) % m
 
-	#----------------------------------output----------------------------------#
-	if verbose:
-		print("Initial array:\n{}".format(_list))
-		print("SPT-output:")
-		for i in range(len(matrix)):
-			print("{}: {}".format(i+1, matrix[i]))
 	return matrix

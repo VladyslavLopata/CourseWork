@@ -3,34 +3,32 @@ import LocalFirst
 import LocalSecond
 import Util
 import os
+import json
 
-input_modes = ['Random', 'Manual']
+strings = json.load(open('strings.json'))
 
 def show_menu():
+	
 	mode = get_input_mode()
 
-	if mode != 'Random':
-		_list, m, n = handle_input(mode)
-		SPT.SPT(_list = _list, m = m, n = n, verbose=True)
-		LocalFirst.local_first(_list = _list, m = m, n = n, verbose=True)
-		LocalSecond.local_second(_list = _list, m = m, n = n, verbose=True)
+	os.system('cls')
+
+	if mode != strings['input_modes'][0][1]:
+		call_functions(handle_input(mode))
 	else:
-		_list, m, n = Util.generate_random_case()
-		SPT.SPT(_list = _list, m = m, n = n, verbose=True)
-		LocalFirst.local_first(_list = _list, m = m, n = n, verbose=True)
-		LocalSecond.local_second(_list = _list, m = m, n = n, verbose=True)
+		call_functions(Util.generate_random_case())
 
 def handle_input(mode):
 	_list = []
 	m = 0
 	n = 0
 
-	if mode=='Manual':
+	if mode==strings['input_modes'][1][1]:
 	
 		is_read = False
 		os.system("cls")
 		while not is_read:
-			in_list = input("Enter your list of works: ")
+			in_list = input(strings['iworklist'])
 			in_list = in_list.split()
 			try:
 				for it in in_list:
@@ -42,22 +40,22 @@ def handle_input(mode):
 				read_list = False
 				_list.clear()
 				os.system("cls")
-				print('Incorrect input')
+				print(strings['input_err'])
 
-		print("Your list: ", _list)
+		print(strings['fenteredlist'], _list)
 
 		while True:
 
 			try:
-				m = int(input('Enter number of machines(m): '))
+				m = int(input(strings['imachines']))
 				if m <= 0:
 					raise Exception()
 				break
 			except:
 				os.system('cls')
-				print ('Input error')
+				print (strings['input_err'])
 
-		print("Your m: ", m)
+		print(strings['sm'], m)
 
 		n = len(_list)
 
@@ -69,19 +67,42 @@ def get_input_mode():
 
 	mode = 0
 
-	try:
-		while True:
-			mode = input('Select the mode.\n1. Random\n2. Manual\nYour choise: ')
-			if mode in ('1', '2'):
-				break
+	while True:
+		try:		
+			print(strings['mode_select'])
+
+			for item in strings['input_modes']:
+				print('{}. {}'.format(item[0], item[1]))
+
+			mode = strings['input_modes'][int(input())-1][1].strip()
+			
+			break
+
+		except:
 			os.system('cls')
-			print('Input is incorrect')
-	except:
-		print('Error!')
-	print ('Selected mode: ', mode)
-	return input_modes[int(mode)-1]
+			print(strings['input_err'])
 
+		
+	
+	print (strings['msel'], mode)
+	
+	return mode
 
+def print_matrix(matrix, name):
+	
+	print(strings['omatrix'].format(name))
+	
+	for i in range(len(matrix)):
+		print(strings['fmatrix'].format(i+1, matrix[i]))
+
+def call_functions(ivals):
+	_list, m, n = ivals
+
+	print(strings['finitial'], _list)
+
+	print_matrix(SPT.SPT(_list = _list, m = m, n = n), strings['SPT'])
+	print_matrix(LocalFirst.local_first(_list = _list, m = m, n = n), strings['lfirst'])
+	print_matrix(LocalSecond.local_second(_list = _list, m = m, n = n), strings['lsecond'])
 
 show_menu()
 
