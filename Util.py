@@ -59,3 +59,15 @@ def target_C_max(matrix):
 	for j in range(len(matrix)):
 		sums.append(sum(matrix[j]))
 	return max(sums)
+
+def generate_random_case():
+
+	import random as r
+	_work_size=100
+	_size = 10
+	m = 3
+	_list = []
+	for i in range(_size):
+		_list.append(r.randint(0, _work_size))
+
+	return _list, m, _size
