@@ -23,8 +23,10 @@
 	"fmatrix":"{}. {}", 
 
 	"finitial":"Initial list of works' lengths: ", 
+	
 	"fenteredlist":"List of works: ",
 
+	"festimates":"Cmax = {}, Cmacron = {}",
 	
 	"input_modes":[
 		[
@@ -32,7 +34,9 @@
 		],
 		[
 			"2", "Manual" 
+		],
+		[
+			"3", "File"
 		]
 	]
-
 }

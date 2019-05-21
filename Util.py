@@ -54,17 +54,15 @@ def target_C_max(matrix):
 '''
 Generates random task for algorithms
 '''
-def generate_random_case():
+def generate_random_case(n = 10, m = 3, _work_size = 100):
 
 	import random as r
-	_work_size=100
-	_size = 10
-	m = 3
+	
 	_list = []
-	for i in range(_size):
+	for i in range(n):
 		_list.append(r.randint(0, _work_size))
 
-	return _list, m, _size
+	return _list, m, n
 
 def try_all_in_radius(matrix, row, m):
 
