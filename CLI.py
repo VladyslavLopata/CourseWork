@@ -1,10 +1,10 @@
-import SPT
-import LocalFirst
-import LocalSecond
-import Util
 import os
 
-from Strings import strings
+import algorithms.LocalFirst as LocalFirst
+import algorithms.LocalSecond as LocalSecond
+import algorithms.SPT as SPT
+import utility.Util
+from utility.Strings import strings
 
 
 def show_menu():
@@ -20,7 +20,7 @@ def show_menu():
         elif mode != strings['input_modes'][0][1]:
             call_functions(handle_input(mode))
         else:
-            call_functions(Util.generate_random_case())
+            call_functions(utility.Util.generate_random_case())
 
         os.system('pause')
 
@@ -54,7 +54,7 @@ def handle_input(mode):
     m = 0
     n = 0
 
-    import CLIUtil as clu
+    import utility.CLIUtil as clu
     # functions corresponding to input methods
     fn = {strings['input_modes'][1][1]: [clu.manual_list_input, clu.manual_machines_input],
           strings['input_modes'][2][1]: [clu.list_from_file, clu.machines_from_file]}
@@ -76,7 +76,7 @@ def print_matrix(matrix, name):
         print(strings['fmatrix'].format(i+1, matrix[i]))
 
     print(strings['festimates'].format(
-        Util.target_C_max(matrix), Util.target_C_macron(matrix)))
+        utility.Util.target_C_max(matrix), utility.Util.target_C_macron(matrix)))
 
 
 def call_functions(ivals):
@@ -97,7 +97,3 @@ def call_functions(ivals):
 def suspend_app():
     os.system("cls")
     os.system("pause")
-
-
-show_menu()
-suspend_app()

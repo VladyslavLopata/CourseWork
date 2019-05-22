@@ -1,7 +1,7 @@
 def local_second(_list=[], n=10, m=3):
 
-    import Util as u
-    import SPT
+    import utility.Util as u
+    import algorithms.SPT as SPT
 
     # initial SPT
     matrix = SPT.SPT(_list, n, m)

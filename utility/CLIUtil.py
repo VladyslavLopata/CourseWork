@@ -1,5 +1,6 @@
-from Strings import strings
 import os
+
+from utility.Strings import strings
 
 file = ''
 

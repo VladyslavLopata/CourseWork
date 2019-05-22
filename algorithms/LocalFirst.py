@@ -1,9 +1,9 @@
 def local_first(_list=[], n=10, m=3):
 
-    import Util as u
+    import utility.Util as u
 
     # Calculating initial SPT
-    import SPT
+    import algorithms.SPT as SPT
     matrix = SPT.SPT(_list, n, m)
 
     # Reversing each row of matrix
