@@ -1,42 +1,35 @@
 {
-
-	"mode_select":"Select input mode.", 
-
-	"input_err":"Incorrect input!\nTry again.", 
-
-	"msel":"Selected mode: ", 
-
-	"iworklist":"Enter work lengths: ", 
-
-	"imachines":"Enter number of machines: ", 
-
-	"sm":"Machine number: ", 
-
-	"omatrix":"Output matrix for {}: ", 
-
-	"SPT":"SPT algorithm", 
-
-	"lfirst":"First local search algorithm", 
-
-	"lsecond":"Second local search algorithm", 
-
-	"fmatrix":"{}. {}", 
-
-	"finitial":"Initial list of works' lengths: ", 
-	
-	"fenteredlist":"List of works: ",
-
-	"festimates":"Cmax = {}, Cmacron = {}",
-	
-	"input_modes":[
+	"mode_select": "Select input mode.",
+	"input_err": "Incorrect input!\nTry again.",
+	"msel": "Selected mode: ",
+	"iworklist": "Enter work lengths: ",
+	"imachines": "Enter number of machines: ",
+	"sm": "Machine number: ",
+	"omatrix": "Output matrix for {}: ",
+	"SPT": "SPT algorithm",
+	"lfirst": "First local search algorithm",
+	"lsecond": "Second local search algorithm",
+	"fmatrix": "{}. {}",
+	"finitial": "Initial list of works' lengths: ",
+	"fenteredlist": "List of works: ",
+	"festimates": "Cmax = {}, Cmacron = {}",
+	"eiofnotfound": "Error while reading the file. \nPlease, make sure that file follows \nthe required format and press ENTER.",
+	"input_modes": [
 		[
-			"1", "Random" 
+			"1",
+			"Random"
 		],
 		[
-			"2", "Manual" 
+			"2",
+			"Manual"
 		],
 		[
-			"3", "File"
+			"3",
+			"File"
+		],
+		[
+			"0",
+			"Exit"
 		]
 	]
 }
