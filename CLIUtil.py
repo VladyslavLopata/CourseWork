@@ -1,6 +1,8 @@
 from Strings import strings
 import os
 
+file = ''
+
 
 def manual_list_input(_list):
 
@@ -35,11 +37,21 @@ def manual_machines_input():
 
 
 def list_from_file(_list):
+
+    global file
+    if not file:
+        file = init_file()
+
     strval = file[0]
     parse_string_to_list(strval, _list)
 
 
 def machines_from_file():
+
+    global file
+    if file == None:
+        file = init_file()
+
     is_read = False
     while not is_read:
         try:
@@ -99,6 +111,3 @@ def assert_file_format(_file):
     for st in _file[0].strip().split():
         if not st.isnumeric():
             raise IOError
-
-
-file = init_file()

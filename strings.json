@@ -12,7 +12,7 @@
 	"fmatrix": "{}. {}",
 	"finitial": "Initial list of works' lengths: ",
 	"fenteredlist": "List of works: ",
-	"festimates": "Cmax = {}, Cmacron = {}",
+	"festimates": "Cmax = {0}, Cmacron = {1:.2f}",
 	"eiofnotfound": "Error while reading the file. \nPlease, make sure that file follows \nthe required format and press ENTER.",
 	"input_modes": [
 		[
